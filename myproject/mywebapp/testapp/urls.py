@@ -2,9 +2,9 @@
 
 from django.conf.urls import url
 from django.contrib import admin
-from testapp import views as testapp_views  # new
+from testapp import views  # new
  
  
 urlpatterns = [
-    url(r'^$', testapp_views.index, name="testapp"),  # new
+    url(r'', views.index, name="testapp"), 
 ]
