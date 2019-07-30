@@ -141,7 +141,7 @@ class ModelMetaclass(type):
         fields = []
         primaryKey = None
         for k, v in attrs.items():
-            if isinstance(v,fields):
+            if isinstance(v, Field):
                 logging.info('  found mapping: %s ==> %s' % (k, v))
                 mappings[k] = v
                 if v.primary_key:
