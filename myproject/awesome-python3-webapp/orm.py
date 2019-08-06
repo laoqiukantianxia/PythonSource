@@ -29,9 +29,9 @@ async def create_pool(loop, **kw):
     __pool = await aiomysql.create_pool(
         host=kw.get('host', 'localhost'),
         port=kw.get('port', 3306),
-        user=kw['root'],
-        password=kw['123456'],
-        db=kw['db'],
+        user=kw['user'],
+        password=kw['password'],
+        db=kw['database'],
         charset=kw.get('charset', 'utf8'),
         autocommit=kw.get('autocommit', True),
         maxsize=kw.get('maxsize', 10),
@@ -54,7 +54,7 @@ async def select(sql, args, size=None):
         return rs
 
 
-async def execute(sql, args):
+async def execute(sql, args, autocommit=True):
     log(sql)
     async with __pool.get() as conn:
         if not autocommit:
