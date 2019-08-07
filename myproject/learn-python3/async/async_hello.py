@@ -4,7 +4,6 @@
 import threading
 import asyncio
 
-
 '''
 一）asyncio:在3.4版本引入的标准库，内置了对异步io的支持
 
@@ -18,10 +17,9 @@ import asyncio
 
 @asyncio.coroutine
 def hello():
-	print("Hello world!(%s)" % threading.currentThread())
-	yield from asyncio.sleep(1)
-	print("Hello again!(%s)" % threading.currentThread())
-
+    print("Hello world!(%s)" % threading.currentThread())
+    yield from asyncio.sleep(1)
+    print("Hello again!(%s)" % threading.currentThread())
 
 
 # 获取EventLoop:
