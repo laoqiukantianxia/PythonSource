@@ -1,0 +1,5 @@
+2019-09-05 08:41:00 - simpleExample - DEBUG - debug message
+2019-09-05 08:41:00 - simpleExample - INFO - info message
+2019-09-05 08:41:00 - simpleExample - WARNING - warn message
+2019-09-05 08:41:00 - simpleExample - ERROR - error message
+2019-09-05 08:41:00 - simpleExample - CRITICAL - critical message
