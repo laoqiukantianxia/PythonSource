@@ -64,6 +64,7 @@ logger.warning('warn message')
 logger.error('error message')
 logger.critical('critical message')
 '''
+logging.basicConfig(format=format, level=logging.DEBUG, datefmt='%Y-%m-%d %H:%M:%S')
 
 # use logging.conf
 import logging.config

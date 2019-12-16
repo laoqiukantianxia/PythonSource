@@ -19,5 +19,4 @@ def fab(max):
 
 # 执行
 for n in fab(5):
-    print
-    n
+    print(n)

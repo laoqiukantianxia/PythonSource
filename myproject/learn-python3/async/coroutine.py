@@ -40,5 +40,6 @@ def produce(c):
     c.close()
 
 
-c = consumer()
-produce(c)
+if __name__ == '__main__':
+    c = consumer()
+    produce(c)
