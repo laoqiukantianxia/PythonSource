@@ -1,0 +1,49 @@
+# allowed command
+root:
+  - reboot
+  - ls
+  - iptables
+  - cat
+  - monitor
+  - iwconfig
+  - ifconfig
+  - mtdconfig get
+  - mtdconfig show
+  - ps
+  - killall -9 watchdog
+  - free
+  - top
+  - /tmp/curl_down.sh
+  - cp
+ubuntu:
+  - reboot
+  - ls
+  - iptables
+  - cat
+  - monitor
+  - iwconfig
+  - ifconfig
+  - mtdconfig get
+  - mtdconfig show
+  - ps
+  - killall -9 watchdog
+  - free
+  - top
+  - /tmp/curl_down.sh
+  - cp
+admin:
+  - reboot
+  - ls
+  - iptables
+  - cat
+  - monitor
+  - iwconfig
+  - ifconfig
+  - mtdconfig get
+  - mtdconfig show
+  - ps
+  - killall -9 watchdog
+  - free
+  - top
+  - /tmp/curl_down.sh
+  - cp

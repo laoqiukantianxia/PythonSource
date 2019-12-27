@@ -1,0 +1,8 @@
+version: '3'
+services:
+  web:
+    container_name: web_ssh
+    restart: always
+    build: .
+    ports:
+      - "8567:8888"
