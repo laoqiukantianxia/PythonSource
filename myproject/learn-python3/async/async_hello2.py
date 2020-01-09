@@ -6,7 +6,7 @@ import asyncio
 
 
 '''
-（二）asyno/await:Python 3.5开始引入了新的语法,可以让coroutine的代码更简洁易读。
+（二）async/await:Python 3.5开始引入了新的语法,可以让coroutine的代码更简洁易读。
 两步简单替换：
     1> 把@asyncio.coroutine替换为async；
     2> 把yield from替换为await

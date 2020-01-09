@@ -30,7 +30,7 @@ def consumer():
 
 
 def produce(c):
-    c.send(None)  # 启动生成器，使生成器停在yield位置
+    c.send(None)  # 启动生成器，使消费者停在yield位置
     n = 0
     while n < 5:
         n = n + 1
