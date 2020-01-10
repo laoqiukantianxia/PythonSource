@@ -14,7 +14,10 @@ import asyncio
 5> 关闭loop：loop.close()
 '''
 
-
+"""
+把asyncio.sleep(1)看成是一个耗时1秒的IO操作，在此期间，主线程并未等待，
+而是去执行EventLoop中其他可以执行的coroutine了，因此可以实现并发执行。
+"""
 @asyncio.coroutine
 def hello():
     print("Hello world!(%s)" % threading.currentThread())
@@ -25,6 +28,7 @@ def hello():
 # 获取EventLoop:
 loop = asyncio.get_event_loop()
 tasks = [hello(), hello(), hello()]
+#tasks = [hello()]
 # 执行coroutine
 loop.run_until_complete(asyncio.wait(tasks))
 

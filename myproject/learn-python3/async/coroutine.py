@@ -35,11 +35,28 @@ def produce(c):
     while n < 5:
         n = n + 1
         print("[PRODUCER] Producing %s..." % n)
-        r = c.send(n)
+        r = c.send(n)   # 每一次调用，值有生成器 yield 左边的值接收，并将右边的值返回
         print("[PRODUCER] Consumer return: %s" % r)
     c.close()
 
 
-if __name__ == '__main__':
-    c = consumer()
-    produce(c)
+c = consumer()
+produce(c)
+
+print('==============yield from=====================')
+def gen():
+    for c in 'AB':
+        yield c
+    for i in range(1, 3):
+        yield i
+
+
+print(list(gen()))
+
+
+def gen2():
+    yield from 'AB'
+    yield from range(1, 3)
+
+
+print(list(gen2()))

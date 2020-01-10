@@ -46,6 +46,7 @@ def main():
     ssl_ctx = get_ssl_context(options)
     server_settings = get_server_settings(options)
     app_listen(app, options.port, options.address, server_settings)
+    loop.start()
 
 if __name__ == '__main__':
     main()
