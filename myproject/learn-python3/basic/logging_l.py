@@ -16,7 +16,7 @@ logging高级用法：
 
 
 
-'''
+
 # simple
 logging.warning('task')
 logging.info('task') # 默认级别是warning，此处不会打印
@@ -33,7 +33,7 @@ numeric_level = getattr(logging, loglevel.upper(), None)
 if not isinstance(numeric_level, int):
     raise ValueError('Invalid log level: %s' % loglevel)
 print('log level: ', numeric_level)
-'''
+
 
 # change output format
 '''
@@ -78,19 +78,19 @@ logger.warning('warn message')
 logger.error('error message')
 logger.critical('critical message')
 '''
-logging.basicConfig(format=format, level=logging.DEBUG, datefmt='%Y-%m-%d %H:%M:%S')
-
-# use logging.conf
-import logging.config
-
-logging.config.fileConfig('logging.conf')
-
-## create logger
-logger = logging.getLogger('simpleExample')
-
-# log recode
-logger.debug('debug message')
-logger.info('info message')
-logger.warning('warn message')
-logger.error('error message')
-logger.critical('critical message')
+# logging.basicConfig(format=format, level=logging.DEBUG, datefmt='%Y-%m-%d %H:%M:%S')
+#
+# # use logging.conf
+# import logging.config
+#
+# logging.config.fileConfig('logging.conf')
+#
+# ## create logger
+# logger = logging.getLogger('simpleExample')
+#
+# # log recode
+# logger.debug('debug message')
+# logger.info('info message')
+# logger.warning('warn message')
+# logger.error('error message')
+# logger.critical('critical message')

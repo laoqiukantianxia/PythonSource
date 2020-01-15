@@ -1,22 +1,5 @@
 # -*- coning:utf-8 -*-
 
-class MyClass():
-    """
-    learn class objects
-    """
-    describe = 'say hello...'
-    def __init__(self):
-        self.greet = 'hello'
-
-    def __repr__(self):
-        return 'myclass'
-
-    def __str__(self):
-        return 'myclass'
-
-    def greeting(self):
-        return self.greet
-
 # 迭代器
 class Fib():
 
@@ -34,18 +17,50 @@ class Fib():
             raise StopIteration()
         return self.a  # 返回下一个值
 
+class MyClass():
+    """
+    learn class objects
+    """
+    # 类变量
+    describe = 'say hello...'
+    def __init__(self):
+        # 实例变量
+        self.greet = 'hello'
 
-print(MyClass.__name__)
-#print(MyClass().__name__) :error
-print(MyClass.__doc__)
-print(MyClass().__doc__)
-print(MyClass.__dict__)
-print(MyClass().__dict__)
-print(MyClass)
-print(MyClass())
-print(dir(MyClass()))
-print(dir(MyClass))
+    def __repr__(self):
+        return 'myclass'
 
+    def __str__(self):
+        return 'myclass'
+
+    @staticmethod
+    def sta_greeting():
+        return 'hello, static method'
+
+    @classmethod
+    def cls_greeting(cls):
+        return 'hello, class method'
+
+    def self_greeting(self):
+        return self.greet
+
+print(MyClass.cls_greeting())
+
+print(MyClass.sta_greeting())
+print(MyClass().self_greeting())
+
+# print(MyClass.__name__)
+# #print(MyClass().__name__) :error
+# print(MyClass.__doc__)
+# print(MyClass().__doc__)
+# print(MyClass.__dict__)
+# print(MyClass().__dict__)
+# print(MyClass)
+# print(MyClass())
+# print(dir(MyClass()))
+# print(dir(MyClass))
+#
+# print(MyClass)
 
 
 
