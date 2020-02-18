@@ -1,5 +1,8 @@
 # -*- coding:utf-8 -*-
 
+#======================1. *args, **kwargs====================
+
+
 def test(age, num, **user):
     print(age, num, user.pop('test', None), user.pop('name', None))
 
