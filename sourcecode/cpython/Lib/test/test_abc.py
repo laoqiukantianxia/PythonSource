@@ -4,7 +4,7 @@
 # Note: each test is run with Python and C versions of ABCMeta. Except for
 # test_ABC_helper(), which assures that abc.ABC is an instance of abc.ABCMeta.
 
-"""Unit tests for abc.py."""
+"""Unit tests for 1_coding.py."""
 
 import unittest
 

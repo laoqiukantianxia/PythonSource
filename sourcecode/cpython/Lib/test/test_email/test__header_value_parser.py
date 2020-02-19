@@ -2718,17 +2718,17 @@ class Test_parse_mime_parameters(TestParserMixin, TestEmailBase):
     mime_parameters_params = {
 
         'simple': (
-            'filename="abc.py"',
-            ' filename="abc.py"',
-            'filename=abc.py',
-            [('filename', 'abc.py')],
+            'filename="1_coding.py"',
+            ' filename="1_coding.py"',
+            'filename=1_coding.py',
+            [('filename', '1_coding.py')],
             []),
 
         'multiple_keys': (
-            'filename="abc.py"; xyz=abc',
-            ' filename="abc.py"; xyz="abc"',
-            'filename=abc.py; xyz=abc',
-            [('filename', 'abc.py'), ('xyz', 'abc')],
+            'filename="1_coding.py"; xyz=abc',
+            ' filename="1_coding.py"; xyz="abc"',
+            'filename=1_coding.py; xyz=abc',
+            [('filename', '1_coding.py'), ('xyz', 'abc')],
             []),
 
         'split_value': (
