@@ -34,6 +34,12 @@ def now():
     logging.info("hello now")
 
 
+def decorator(f):
+    def wrapper(*args, **kw):
+        # TODO
+        return f(*args, **kw)
+    return wrapper
+
 # def log1(test):
 #     def decorator(func):
 #         @functools.wraps(func)

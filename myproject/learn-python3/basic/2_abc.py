@@ -33,7 +33,7 @@ print(classmates[-1])
 # a. dict是一种用空间换时间方法
 # b. dict的key必须是不可变对象。
 print('======================dict=============================')
-classmates = {'zhao':1, 'qiao':2, 'sun':3, 'li':4}
+classmates = {'zhao': 1, 'qiao': 2, 'sun': 3, 'li': 4}
 print(classmates)
 print('zhou' in classmates)
 print(classmates.get('zhou', None))
@@ -57,8 +57,8 @@ print(s.add(10086), s)
 ## 交集和并集处理
 a = set([1, 2, 3])
 b = set([2, 3, 4])
-print(a & b)   # 交集
-print(a | b)   # 并集
+print(a & b)   # 交集 {2,3}
+print(a | b)   # 并集 {1,2,3,4}
 
 # slice，切片
 L = ['zhao', 'qian', 'sun', 'li']
