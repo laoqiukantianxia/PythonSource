@@ -17,51 +17,64 @@ class Fib():
             raise StopIteration()
         return self.a  # 返回下一个值
 
-class MyClass():
+
+class Student(object):
     """
     learn class objects
     """
     # 类变量
     describe = 'say hello...'
-    def __init__(self):
+    # 属性限制。表示类只能绑定__slots__中含有的属性。对继承的子类不起作用
+    __slots__ = ['name', '_age', '_city']
+
+    def __init__(self, name, age, city):   # self 参数代表示例，使用时自动传入
         # 实例变量
-        self.greet = 'hello'
+        self.name = name    # greet在__slots__中
+        self._age = age
+        self._city = city
 
-    def __repr__(self):
-        return 'myclass'
+    @property
+    def age(self):
+        return self._age
 
+    @age.setter
+    def age(self, value):
+        if isinstance(value, int):
+            self._age = value
+        else:
+            raise ValueError('must be an integer!')
+
+    @property
+    def city(self): # 只读属性
+        return self._city
+
+
+s1 = Student('Bill', 17, 'shanghai')
+# s1.age = '16' # ValueError: must be an integer!
+# s1.city = 'beijing'  # AttributeError: can't set attribute
+print(s1.name, s1.age, s1.city)
+
+
+class A(object):
+    def __init__(self, name):
+        self.name = name
+
+print(A('Bill'))
+
+
+class A(object):
+    def __init__(self, name):
+        self.name = name
+
+    # 调试使用
+    # def __repr__(self):
+    #     return 'College'
+
+    # print打印显示
     def __str__(self):
-        return 'myclass'
+        return 'College'
 
-    @staticmethod
-    def sta_greeting():
-        return 'hello, static method'
-
-    @classmethod
-    def cls_greeting(cls):
-        return 'hello, class method'
-
-    def self_greeting(self):
-        return self.greet
-
-print(MyClass.cls_greeting())
-
-print(MyClass.sta_greeting())
-print(MyClass().self_greeting())
-
-# print(MyClass.__name__)
-# #print(MyClass().__name__) :error
-# print(MyClass.__doc__)
-# print(MyClass().__doc__)
-# print(MyClass.__dict__)
-# print(MyClass().__dict__)
-# print(MyClass)
-# print(MyClass())
-# print(dir(MyClass()))
-# print(dir(MyClass))
-#
-# print(MyClass)
-
+print(A('Bill'))
 
 
 
