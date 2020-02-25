@@ -78,3 +78,64 @@ print(A('Bill'))
 
 
 
+# __getattr__：动态的处理属性
+class Chain(object):
+
+    def __init__(self, path=''):
+        self._path = path
+
+    def __getattr__(self, path):
+        return Chain('%s/%s' % (self._path, path))
+
+    def __str__(self):
+        return self._path
+
+    __repr__ = __str__
+
+
+print(Chain().status.list.time.mp4)  # .status、list、time、mp4 实例属性
+
+# __call__：可以对示例直接进行调用
+class Student(object):
+    def __init__(self, name):
+        self.name = name
+
+    def __call__(self):
+        print('My name is %s.' % self.name)
+s = Student('Bill')
+s()
+
+# 枚举类
+from enum import Enum
+
+Month = Enum('Month', ('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'))
+for name, member in Month.__members__.items():
+    print(name, '=>', member, ',', member.value)
+
+# type()动态创建类
+# type() 函数可以返回一个类型或变量的类型，又可以创建出新的类型。
+# Hello 是一个class，它的类型就是type，
+# s 是一个实例，它的类型就是‘class Student’
+class Hello(object):
+    def hello(self, name='world'):
+        print('Hello, %s.' % name)
+
+h = Hello()
+
+print(type(Hello))   #  <class 'type'>
+print(type(h))       # <class '__main__.Hello'>
+
+# type 动态创建类需要三个参数：
+# a. class 名称
+# b. 继承的父类，tuple单元素写法
+# c. class的方法名称与函数绑定
+
+def fn(self, name='world'):
+    print('Hello, %s.' % name)
+
+Hello = type('Hello', (object,), dict(hello=fn))
+h = Hello()
+h.hello()
+
+
+# metaclass()：元类
